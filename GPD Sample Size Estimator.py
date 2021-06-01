@@ -106,27 +106,21 @@ def main(sample_original, beamtubes, rm, length, threshold, fit_method):
 #------------------------------------------------
 
 #Getting Data and treating
-width = 2.10
+thickness = 2.10
 filename = 'IRIS_data.txt'
 sample_pure = np.array(np.loadtxt(fname=filename))
 sample_original = sorted(np.array(width - sample_pure))
 
 
-#Heat exchangers definitions
+#Heat exchanger informations
 beamtubes = 500
 length = 5200  
 diameter = 25.4
 rm = (diameter-(width/2))/2
 
 
-#thresh_modeling.MRL(sample_original, 0.05)
-#thresh_modeling.Parameter_Stability_plot(sample_original, 0.05)
-
-#Statistical Definitions
-
 fit_method = 'mle'
 cl = 0.05
-
 main(sample_original, beamtubes, rm, length, 0.5, fit_method)
 
 
